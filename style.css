@@ -1,0 +1,829 @@
+/*All pages*/
+body {
+    width: 100%;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(245, 241, 230); 
+    color: rgb(78, 52, 46); 
+}
+
+/* Header */
+#header, #footer {
+    background-color: #d7ccc8;
+    padding: 20px;
+    text-align: center;
+    align-self: center;
+    width: 90%;
+    border-bottom: 3px solid rgb(161, 136, 127);
+}
+
+#footer {
+    bottom: 0;
+    width: 90%;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+/* Navigation Bar */
+.navbar {
+    margin-top: 15px;
+}
+
+.navbar button {
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #4e342e;
+    background-color: #bcaaa4;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: rgb(161, 136, 127);
+    width: 100%;
+    color: white;
+}
+
+#openbox {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(254, 249, 244);
+    width: 50%;
+    border: 1px solid rgb(215, 204, 200);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#newbox img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#newbox {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(254, 249, 244);
+    width: 50%;
+    border: 1px solid rgb(215, 204, 200);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Opening Hours Table */
+#openinghourstable {
+    border-collapse: collapse;
+    display: inline-block;
+    font-size: 1em;
+}
+
+#openinghourstable th,
+#openinghourstable td {
+    border: 1px solid #bcaaa4;
+    padding: 12px;
+    text-align: center;
+}
+
+#openinghourstable th {
+    background-color: rgb(215, 204, 200);
+    color: #3e2723;
+}
+
+#openinghourstable td {
+    background-color: rgb(254, 249, 244);
+}
+
+/*Product Page*/
+/*Product Box*/
+#productgrid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    position: relative;
+}
+#productgrid img{
+    width: 75%;
+    height: 75%;
+    display: block;
+    margin: 20px auto;
+}
+#productbox {
+    background-color: white;
+    box-shadow: 3px 3px 5px;
+    border-radius: 8px;
+    width: 20%;
+    height: 400px;
+    margin-bottom: 4px;
+}
+#pricegrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    position: relative;
+}
+#pricebox {
+    background-color: white;
+    box-shadow: 3px 3px 5px;
+    border-radius: 8px;
+    width: 20%;
+    min-height: 0;
+    height: auto !important;
+    overflow: visible !important;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal !important;
+}
+
+#pricebox button {
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#paybox {
+    width: 86%;
+    height: 140px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(254, 249, 244);
+    border: 1px solid rgb(215, 204, 200);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#pay-button {
+    padding: 5px 80px;
+    font-size: 25px;
+    border-radius: 8px;
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+ }
+
+#cart-table {
+    display: inline-block;
+    margin: 20px auto;
+}
+#cart-table th, #cart-table td {
+    text-align: center;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+}
+
+#cart-table td {
+    padding: 10px;
+    border: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    
+}
+
+/* Login Page */
+#accountgrid {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    overflow: hidden;
+}
+
+#loginbox {
+    text-align: center;
+    width: 30%;
+    height: 70vh;
+    background-color: rgb(254, 249, 244,0.6);
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px gray;
+    border-radius: 8px;
+    position: relative;
+}
+#createaccountbox {
+    text-align: center;
+    width: 30%;
+    height: 70vh;
+    background-color: rgb(254, 249, 244, 0.6);
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px gray;
+    border-radius: 8px;
+    position: relative;
+
+}
+
+#slidelogin {
+   text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(254, 249, 244);
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px gray;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 1000;     
+    transition: 1.0s ease;
+}
+
+#noaccount {
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    padding: 5px 20px;
+}
+
+#loginperson{
+    opacity: 0.4;
+}
+
+#SwitchToCreateAccount{
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    padding: 5px 20px;
+}
+#createaccounttitle, #logintitle {
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    text-align: center;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+#fn, #ln, #email, #user, #pass, #Email, #Username, #Password{
+    text-align: center;
+    border-radius: 8px;
+    width: 30%;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#generatepassword{
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+ }
+ #createaccountbutton{
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+ }
+ #login {
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+ }
+
+#imageicon, #viewiconshow, #viewiconhide, #viewiconshow2, #viewiconhide2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+#fngrid, #lngrid, #emailgrid, #usergrid, #passgrid, #Emailgrid, #Usernamegrid, #Passwordgrid{
+    display: flex;
+    justify-content: center;
+    column-gap: 0px;
+}
+
+#fnicon, #lnicon, #emailicon, #usericon, #passicon, #Emailicon, #Usernameicon, #Passwordicon, #viewpassword{
+    border-radius: 2px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+
+#fnerror, #lnerror, #usererror, #emailerror, #passerror, #Usernameerror, #Emailerror, #Passworderror {
+    color: red;
+}
+
+#paypal, #visa, #mastercard, #giftcard{
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    
+}
+
+#pmlabel {
+    display: inline-flex; 
+    align-items: center; 
+    margin: 5px 10px;
+}
+
+/* Check out Products */
+#checkout-box{
+    text-align: center;
+    background-color: rgb(254, 249, 244);
+    border: 1px solid rgb(215, 204, 200);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    width: 45%;
+    height: fit-content;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: normal;
+    word-wrap: break-word;
+    z-index: 1000;
+}
+
+#paymentmethodbox {
+    text-align: center;
+    background-color: rgb(254, 249, 244);
+    border: 1px solid rgb(215, 204, 200);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    width: 35%;
+    height: fit-content;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: normal;
+    word-wrap: break-word;
+    z-index: 1000;
+}
+
+#close-checkout-box{
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 30px;
+    font-size: 20px;
+    padding: 2px 10px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+ }
+
+#ridofpayment{
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 30px;
+    font-size: 20px;
+    padding: 2px 10px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+#itemcart{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 70px;
+}
+
+#LinkToCheckout{
+    display: block;
+    margin: auto;
+    padding: 5px 20px;
+    font-size: 20px;
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+ }
+
+#paymentmethodbox label {
+    align-items: center;
+    gap: 6px; 
+}
+
+#paycheckout{
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    width: 40%;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#card {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    border-radius: 8px;
+    width: 70%;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+#formatpay{
+    display: grid;
+    grid-template-columns: 2, 1fr;
+}
+
+#exdate {
+    width: 180px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#cv{
+    display: block;
+    margin: auto;
+    text-align: center;
+    border-radius: 8px;
+    width: 35px;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#card{
+    text-align: center;
+    font-size: 20px;
+    width: 120px;
+}
+
+#formatpay {
+    display: flex; 
+    column-gap: 30px; 
+    justify-content: center; 
+    align-items: flex-end;
+}
+
+#leftpay, #rightpay {
+    display: flex; 
+    flex-direction: column;
+}
+
+/* About Us Page */
+
+#vacanciesgrid {
+    display: block;
+    margin: auto;
+    align-items: center;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    overflow: hidden;
+}
+
+#vacanciesbox {
+    text-align: center;
+    align-self: center;
+    background-color: rgb(254, 249, 244);
+    border: 1px solid rgb(215, 204, 200);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    width: 50%;
+}
+
+#vacanciesbox button {
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#applybox {
+    text-align: center;
+    background-color: rgb(254, 249, 244);
+    border: 1px solid rgb(215, 204, 200);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    width: 35%;
+    height: fit-content;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: normal;
+    word-wrap: break-word;
+    z-index: 1000;
+}
+
+#applybox button {
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    padding: 10px 50px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#applybox input {
+    text-align: center;
+    border-radius: 8px;
+    width: 80%;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin: 10px auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+#applybox input[type="file"] {
+    width: 40%;
+}
+
+#applybox input::file-selector-button {
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    padding: 5px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#learnmorebox1, #learnmorebox2, #learnmorebox3, #learnmorebox4, #learnmorebox5, #learnmorebox6 {
+    text-align: center;
+    background-color: rgb(254, 249, 244);
+    border: 1px solid rgb(215, 204, 200);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    padding: 20px;
+    width: 30%;
+    height: fit-content;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: normal;
+    word-wrap: break-word;
+    z-index: 1000;
+}
+
+#learnmorebox1 button, #learnmorebox2 button, #learnmorebox3 button, 
+#learnmorebox4 button, #learnmorebox5 button, #learnmorebox6 button {
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    padding: 5px 50px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#contactinfobox {
+    text-align: center;
+    background-color: rgb(254, 249, 244);
+    border: 1px solid rgb(215, 204, 200);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    border-radius: 8px;
+    display: block;
+    margin: 0px auto;
+    position: relative;
+    width: 80%;
+}
+
+@media (max-width: 600px) {
+    #checkoutbox,
+    #paymentmethodbox,
+    #applybox,
+    #successful-payment-box,
+    #learnmorebox1, #learnmorebox2, #learnmorebox3,
+    #learnmorebox4, #learnmorebox5, #learnmorebox6 {
+        width: 95vw !important;
+        min-width: 0 !important;
+        left: 50%;
+        top: 50%;
+        padding: 10px !important;
+        font-size: 1em;
+    }
+
+    #itemcart {
+        font-size: 16px;
+        margin-left: 0;
+        width: 98vw;
+    }
+
+    #paybox {
+        width: 98vw;
+        padding: 5px;
+    }
+
+    #productbox, #pricebox {
+        width: 90vw;
+        min-width: 0;
+        max-width: 98vw;
+    }
+
+    #card, #exdate, #cv {
+        width: 90vw !important;
+        max-width: 98vw;
+        font-size: 16px;
+    }
+
+    #formatpay {
+        flex-direction: column !important;
+        row-gap: 10px;
+        column-gap: 0;
+        align-items: stretch;
+    }
+
+    #leftpay, #rightpay {
+        width: 100%;
+    }
+
+    #paycheckout, #LinkToCheckout {
+        width: 90vw !important;
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    #applybox input {
+        width: 95vw !important;
+        font-size: 16px;
+    }
+    #applybox input[type="file"] {
+        width: 120vw !important;
+    }
+    #pricegrid {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    #pricebox {
+        width: 95vw !important;
+        min-width: 0 !important;
+        max-width: 98vw !important;
+        font-size: 1.2em !important;
+        padding: 18px 8px !important;
+        margin-bottom: 12px !important;
+        box-sizing: border-box;
+        text-align: center;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal !important;
+    }
+    #accountgrid {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100vw !important;
+        gap: 16px !important;
+    }
+    .box, .animatedboxlogin, #createaccountbox, #loginbox {
+        width: 95vw !important;
+        height: auto !important;
+        min-width: 0 !important;
+        max-width: 98vw !important;
+        box-sizing: border-box;
+        padding: 12px 8px !important;
+        margin: 0 auto 12px auto !important;
+    }
+    #slidelogin, #createaccounttitle {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100vw !important;
+        padding: 0 !important;
+        display: block !important; 
+    }
+
+    #slidelogin {
+        display: none !important;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        width: 90vw !important;
+        max-width: 98vw !important;
+        font-size: 1em !important;
+        box-sizing: border-box;
+    }
+    button {
+        width: 90vw !important;
+        max-width: 98vw !important;
+        font-size: 1em !important;
+        margin: 8px 0 !important;
+    }
+    hr {
+        margin: 10px 0 !important;
+    }
+    label {
+        font-size: 1em !important;
+    }
+    #passgrid, #usergrid, #fngrid, #lngrid, #emailgrid, #Usernamegrid, #Passwordgrid, #Emailgrid {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+}

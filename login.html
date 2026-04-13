@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <body style="background-image: url(images/LoginBackground.jpg);">
+        <main><br><br><br><br>
+            <div class="container" id="accountgrid">
+                <div class="animatedboxlogin">
+                </div>
+                <div class="box" id="createaccountbox">
+                    <div class="box" id="slidelogin">
+                        <h3 id="slidetitle">Welcome Back to Alyssa's Coffee Shop</h3>
+                        <p id="slidep1">Please enter your login details</p>
+                        <img src="images/LoginPerson.png" id="loginperson">
+                        <hr>
+                        <h3 id="slidetitle2">New here?</h3>
+                        <button id="SwitchToCreateAccount">Sign Up</button>
+                        <p id="passrequirements"></p>
+                        <hr>
+                        <a href="index.html"><button id="noaccount">Continue without an account</button></a>
+                    </div>
+                    <div class="box" id="createaccounttitle"><h3>Create A New Account</h3></div><br>
+
+                    <label>First Name</label><br>
+                    <div class="container" id="fngrid">
+                    <div class="box" id="fnicon"><img src="images/nameicon .png" id="imageicon"></div>
+                    <input id="fn" type="text">
+                    </div>
+                    <p id="fnerror"></p><hr>
+
+                    <label>Last Name</label><br>
+                    <div class="container" id="lngrid">
+                    <div class="box" id="lnicon"><img src="images/nameicon .png" id="imageicon"></div>
+                    <input id="ln" type="text">
+                    </div>
+                    <p id="lnerror"></p><hr>
+
+                    <label>Email</label><br>
+                    <div class="container" id="emailgrid">
+                    <div class="box" id="emailicon"><img src="images/emailicon.png" id="imageicon"></div>
+                    <input id="email" type="email">
+                    </div>
+                    <p id="emailerror"></p><hr>
+
+                    <label>Username</label><br>
+                    <div class="container" id="usergrid">
+                    <div class="box" id="usericon"><img src="images/usernameicon.png" id="imageicon"></div>
+                    <input id="user">
+                    </div>
+                    <p id="usererror"></p><hr>
+
+                    <label>Password</label><br>
+                    <div class="container" id="passgrid">
+                    <div class="box" id="passicon"><img src="images/passwordicon.png" id="imageicon"></div>
+                    <input id="pass" type="password">
+                    <div class="box" id="viewpassword"><img src="images/ShowPassword.png" id="viewiconshow">
+                        <img src="images/HidePassword.jpg" id="viewiconhide"></div>
+                    </div><br>
+                    <button id="generatepassword">Generate Password</button>
+                    <p id="passerror"></p><hr>
+                    
+                    <button id="createaccountbutton">Create Account</button>
+                </div>
+                <div class="box"; id="loginbox">
+                    <div class="box" id="logintitle"><h3>Welcome Back</h3></div><br>
+                    
+                    <label>Email</label><br>
+                    <div class="container" id="Emailgrid">
+                    <div class="box" id="Emailicon"><img src="images/emailicon.png" id="imageicon"></div>
+                    <input type="email" id="Email">
+                    </div>
+                    <p id="Emailerror"></p><hr>
+
+                    <label>Username</label><br>
+                    <div class="container" id="Usernamegrid">
+                    <div class="box" id="Usernameicon"><img src="images/usernameicon.png" id="imageicon"></div>
+                    <input type="text" id="Username">
+                    </div>
+                    <p id="Usernameerror"></p><hr>
+
+                    <label>Password</label><br>
+                    <div class="container" id="Passwordgrid">
+                    <div class="box" id="Passwordicon"><img src="images/passwordicon.png" id="imageicon"></div>
+                    <input type="password" id="Password">
+                    <div class="box" id="viewpassword"><img src="images/ShowPassword.png" id="viewiconshow2">
+                        <img src="images/HidePassword.jpg" id="viewiconhide2"></div>
+                    </div>
+                    <p id="Passworderror"></p><hr>
+
+                    <button id="login">Log in</button>
+                    <p id="welcome"></p>
+                </div>
+            </div>
+        </main>
+        <script>
+            let fn = sessionStorage.getItem("fn");
+            let ln = sessionStorage.getItem("ln");
+            let email = sessionStorage.getItem("email");
+            let user= sessionStorage.getItem("user");
+            let pass= sessionStorage.getItem("pass");
+            let fnInput = document.getElementById("fn");
+            let lnInput = document.getElementById("ln");
+            let emailInput = document.getElementById("email");
+            let userInput = document.getElementById("user");
+            let passInput = document.getElementById("pass");
+            let valid = true;
+
+            document.getElementById("createaccountbutton").onclick= function(){
+                if (fnInput.value.trim() === ""){
+                    document.getElementById("fnerror").textContent= "Please enter your First Name"
+                    valid = false;}
+                    else {
+                        document.getElementById("fnerror").textContent = "";}
+                if (lnInput.value.trim() === ""){
+                    document.getElementById("lnerror").textContent= "Please enter your Last Name"
+                    valid = false;}
+                    else {
+                        document.getElementById("lnerror").textContent = "";}
+                if (emailInput.value.trim() === ""){
+                    document.getElementById("emailerror").textContent= "Please enter your Email"
+                    valid = false;}
+                    else {
+                        document.getElementById("emailerror").textContent = "";}
+                if (userInput.value.trim() === ""){
+                    document.getElementById("usererror").textContent= "Please enter a Username"
+                    valid = false;}
+                    else {
+                        document.getElementById("usererror").textContent = "";}
+                if (passInput.value.trim() === ""){
+                    document.getElementById("passerror").textContent= "Please enter a Password or Generate a Password"
+                    valid = false;}
+                    else {
+                        document.getElementById("passerror").textContent = "";}
+                //Valid Password
+                if (passInput.length < 8) {
+                    document.getElementById("passrequirements").textContent = "Password must be 8 characters long";
+                    valid = false;}
+                if (valid) {
+                    window.location.href = "homestore.html";
+                    console.log(`The first name is ${fn}, The last name is ${ln}, The email is ${email}` )
+                }};
+            
+    
+
+        //Password Generator 
+        function GeneratePassword(length, includeLowcase, includeNumbers, includeUppercase, includeSymbols){
+            const LowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+            const UppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const Symbols = "!£$%&*@#";
+            const numbers = "0123456789";
+
+            let allowedcharacters = "";
+            let password = "";
+            
+            allowedcharacters += includeLowcase ? LowerCaseChars: "";
+            allowedcharacters += includeSymbols ? Symbols: "";
+            allowedcharacters += includeUppercase ? UppercaseChars: "";
+            allowedcharacters += includeNumbers ? numbers: "";
+
+            console.log(allowedcharacters)
+            
+            for(let i= 0; i < length; i++){
+                const randomIndex= Math.floor(Math.random() * allowedcharacters.length);
+                password += allowedcharacters[randomIndex]
+            }
+            return password;
+        };
+
+        const passwordLength= 12 ;
+        const includeLowcase= true;
+        const includeUppercase= true;
+        const includeSymbols= true; 
+        const includeNumbers= true;
+
+        document.getElementById("generatepassword").onclick= function(){
+            const passwordGenerated = GeneratePassword(passwordLength, includeLowcase, includeNumbers, includeUppercase, includeSymbols)
+            console.log(`Generated Password: ${passwordGenerated}`);
+            passInput.value = passwordGenerated;
+            sessionStorage.setItem("pass", passwordGenerated);
+            document.getElementById("passerror").textContent= "";
+            alert(`Your password is ${passwordGenerated}`);
+
+        };
+
+        //Welcome Back
+        let Email = document.getElementById("Email"); 
+        let Username = document.getElementById("Username");
+        let Password = document.getElementById("Password");
+
+        document.getElementById("login").onclick= function () {
+            if (Email.value === email && Username.value === user && Password.value === pass ) {
+                document.getElementById("welcome").textContent=`Welcome back ${fn}`;
+                document.getElementById("welcome").style.color= "green";}
+                else {
+                    document.getElementById("welcome").textContent= "Account doesn't exist"
+                    document.getElementById("welcome").style.color= "red";};
+            if (Email.value.trim() === "") {
+                document.getElementById("Emailerror").textContent= "Please enter your email"}
+            if (Username.value.trim() === "") {
+                document.getElementById("Usernameerror").textContent= "Please enter your username"}
+            if (Password.value.trim() === "") {
+                document.getElementById("Passworderror").textContent= "Please enter your password"}};
+            
+            
+        
+        //View Password
+        const passwordfield = document.getElementById("pass");
+        const ShowPassword = document.getElementById("viewiconshow");
+        const HidePassword = document.getElementById("viewiconhide");
+        HidePassword.style.display = "none";
+
+        ShowPassword.onclick= function(){
+            passwordfield.type = "text";
+            ShowPassword.style.display = "none";
+            HidePassword.style.display = "inline";};
+
+        HidePassword.onclick= function(){
+            passwordfield.type = "password";
+            ShowPassword.style.display = "inline";
+            HidePassword.style.display = "none";};
+
+            
+        const passwordfield2 = document.getElementById("Password");
+        const ShowPassword2 = document.getElementById("viewiconshow2");
+        const HidePassword2 = document.getElementById("viewiconhide2");
+        HidePassword2.style.display = "none";
+
+        ShowPassword2.onclick= function(){
+            passwordfield2.type = "text";
+            ShowPassword2.style.display = "none";
+            HidePassword2.style.display = "inline";};
+
+        HidePassword2.onclick= function(){
+            passwordfield2.type = "password";
+            ShowPassword2.style.display = "inline";
+            HidePassword2.style.display = "none";};
+        
+        //Sliding Box
+        let slid = false
+        const SwitchToCA = document.getElementById("SwitchToCreateAccount")
+        const SlideLogin = document.getElementById("slidelogin")
+
+        SwitchToCA.onclick = function(){
+            if (!slid) {
+                SlideLogin.style.left = '100%';
+                document.getElementById("slidetitle").textContent = "Welcome to Alyssa's Coffee Shop";
+                document.getElementById("slidep1").textContent = "Please create your account";
+                document.getElementById("slidetitle2").textContent = "Already a member?"
+                SwitchToCA.textContent = "Login";
+                slid = true}
+            else {
+                SlideLogin.style.left = '0%';
+                document.getElementById("slidetitle").textContent = "Welcome Back to Alyssa's Coffee Shop";
+                document.getElementById("slidep1").textContent = "Please enter your Login details";
+                document.getElementById("slidetitle2").textContent = "New here?"
+                SwitchToCA.textContent = "Sign Up"
+                slid = false}};
+        </script>
+    </body>
+</html>

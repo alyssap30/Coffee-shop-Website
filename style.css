@@ -226,52 +226,25 @@ body {
 }
 
 /* Login Page */
-#accountgrid {
-    display: flex;
-    justify-content: center;
-    column-gap: 10px;
-    overflow: hidden;
-}
 
-#loginbox {
-    text-align: center;
-    width: 30%;
-    height: 70vh;
-    background-color: rgb(254, 249, 244,0.6);
-    border: 1px solid black;
-    box-shadow: 3px 3px 5px gray;
-    border-radius: 8px;
-    position: relative;
-}
 #createaccountbox {
     text-align: center;
-    width: 30%;
-    height: 70vh;
+    display: block;
+    justify-self: center;
+    width: 90%;
+    max-width: 600px;
     background-color: rgb(254, 249, 244, 0.6);
     border: 1px solid black;
     box-shadow: 3px 3px 5px gray;
     border-radius: 8px;
-    position: relative;
 
 }
 
-#slidelogin {
-   text-align: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(254, 249, 244);
-    border: 1px solid black;
-    box-shadow: 3px 3px 5px gray;
-    border-radius: 8px;
-    position: absolute;
-    z-index: 1000;     
-    transition: 1.0s ease;
-}
-
-#noaccount {
+#noAccountBtn {
     background-color: rgb(188, 170, 164);
     color: rgb(78, 52, 46);
     border: none;
+    width: 80%;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -279,31 +252,18 @@ body {
     padding: 5px 20px;
 }
 
-#loginperson{
-    opacity: 0.4;
-}
 
-#SwitchToCreateAccount{
-    background-color: rgb(188, 170, 164);
-    color: rgb(78, 52, 46);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 20px;
-    padding: 5px 20px;
-}
-#createaccounttitle, #logintitle {
+#createaccounttitle {
     width: 100%;
     height: fit-content;
     justify-content: center;
     text-align: center;
-    background-color: lightgray;
-    border: 1px solid lightgray;
+    background-color: #d7ccc8;
+    border: 1px solid;
     border-radius: 8px;
 }
 
-#fn, #ln, #email, #user, #pass, #Email, #Username, #Password{
+#fn, #ln, #email, #user, #pass {
     text-align: center;
     border-radius: 8px;
     width: 30%;
@@ -313,55 +273,34 @@ body {
     border: 1px solid #ccc;
 }
 
-#generatepassword{
+#generatepassword, #createaccountbutton{
     background-color: rgb(188, 170, 164);
     color: rgb(78, 52, 46);
     border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 8px;
+    margin-top: 2%;
+    padding: 1.5%;
+    width: 40%;
+    margin-bottom: 3%;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    
- }
- #createaccountbutton{
-    background-color: rgb(188, 170, 164);
-    color: rgb(78, 52, 46);
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    
- }
- #login {
-    background-color: rgb(188, 170, 164);
-    color: rgb(78, 52, 46);
-    border: none;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  
  }
 
-#imageicon, #viewiconshow, #viewiconhide, #viewiconshow2, #viewiconhide2 {
+#imageicon, #viewiconshow, #viewiconhide {
     width: 100%;
     height: 100%;
     border-radius: 2px;
 }
 
-#fngrid, #lngrid, #emailgrid, #usergrid, #passgrid, #Emailgrid, #Usernamegrid, #Passwordgrid{
+#fngrid, #lngrid, #emailgrid, #usergrid, #passgrid {
     display: flex;
     justify-content: center;
     column-gap: 0px;
 }
 
-#fnicon, #lnicon, #emailicon, #usericon, #passicon, #Emailicon, #Usernameicon, #Passwordicon, #viewpassword{
+#fnicon, #lnicon, #emailicon, #usericon, #passicon, #viewpassword{
     border-radius: 2px;
     width: 30px;
     height: 30px;
@@ -369,8 +308,7 @@ body {
     border: 1px solid black;
 }
 
-
-#fnerror, #lnerror, #usererror, #emailerror, #passerror, #Usernameerror, #Emailerror, #Passworderror {
+#fnerror, #lnerror, #usererror, #emailerror, #passerror{
     color: red;
 }
 
@@ -398,7 +336,7 @@ body {
     flex-direction: column;
     position: fixed;
     top: 50%;
-    width: 45%;
+    width: 70%;
     height: fit-content;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -463,7 +401,7 @@ body {
 
 #itemcart{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+    font-size: 120%;
     text-align: left;
     margin-left: 70px;
 }
@@ -688,7 +626,7 @@ body {
     width: 80%;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     #checkoutbox,
     #paymentmethodbox,
     #applybox,
@@ -712,12 +650,6 @@ body {
     #paybox {
         width: 98vw;
         padding: 5px;
-    }
-
-    #productbox, #pricebox {
-        width: 90vw;
-        min-width: 0;
-        max-width: 98vw;
     }
 
     #card, #exdate, #cv {

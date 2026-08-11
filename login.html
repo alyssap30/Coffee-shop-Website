@@ -6,24 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <body style="background-image: url(images/LoginBackground.jpg);">
         <main><br><br><br><br>
-            <div class="container" id="accountgrid">
-                <div class="animatedboxlogin">
-                </div>
-                <div class="box" id="createaccountbox">
-                    <div class="box" id="slidelogin">
-                        <h3 id="slidetitle">Welcome Back to Coffee Shop</h3>
-                        <p id="slidep1">Please enter your login details</p>
-                        <img src="images/LoginPerson.png" id="loginperson">
-                        <hr>
-                        <h3 id="slidetitle2">New here?</h3>
-                        <button id="SwitchToCreateAccount">Sign Up</button>
-                        <p id="passrequirements"></p>
-                        <hr>
-                        <a href="index.html"><button id="noaccount">Continue without an account</button></a>
+                <header id="header">
+                    <h1>Coffee Shop</h1>
+                    <div class="navbar">
+                        <button id = "noAccountBtn"><a href="index.html">Continue without An Account</a></button>
                     </div>
-                    <div class="box" id="createaccounttitle"><h3>Create A New Account</h3></div><br>
+                </header><br><br><br><br>
+                <div class="box" id="createaccountbox">
+                    <div class="box" id="createaccounttitle"><h3>Create An Account</h3></div><br>
 
                     <label>First Name</label><br>
                     <div class="container" id="fngrid">
@@ -59,42 +50,22 @@
                     <input id="pass" type="password">
                     <div class="box" id="viewpassword"><img src="images/ShowPassword.png" id="viewiconshow">
                         <img src="images/HidePassword.jpg" id="viewiconhide"></div>
-                    </div><br>
-                    <button id="generatepassword">Generate Password</button>
+                    </div>
                     <p id="passerror"></p><hr>
-                    
+                    <button id="generatepassword">Generate Password</button>
                     <button id="createaccountbutton">Create Account</button>
                 </div>
-                <div class="box"; id="loginbox">
-                    <div class="box" id="logintitle"><h3>Welcome Back</h3></div><br>
-                    
-                    <label>Email</label><br>
-                    <div class="container" id="Emailgrid">
-                    <div class="box" id="Emailicon"><img src="images/emailicon.png" id="imageicon"></div>
-                    <input type="email" id="Email">
-                    </div>
-                    <p id="Emailerror"></p><hr>
+            </div><br><br>
 
-                    <label>Username</label><br>
-                    <div class="container" id="Usernamegrid">
-                    <div class="box" id="Usernameicon"><img src="images/usernameicon.png" id="imageicon"></div>
-                    <input type="text" id="Username">
-                    </div>
-                    <p id="Usernameerror"></p><hr>
+            <footer id="footer">
+                <p>
+                    Privacy Policy<br>
+                    Cookies Policy<br>
+                    Terms and Conditions<br><br>
+                    © 2026 Coffee Shop. All Rights Reserved
+                </p>
+            </footer>
 
-                    <label>Password</label><br>
-                    <div class="container" id="Passwordgrid">
-                    <div class="box" id="Passwordicon"><img src="images/passwordicon.png" id="imageicon"></div>
-                    <input type="password" id="Password">
-                    <div class="box" id="viewpassword"><img src="images/ShowPassword.png" id="viewiconshow2">
-                        <img src="images/HidePassword.jpg" id="viewiconhide2"></div>
-                    </div>
-                    <p id="Passworderror"></p><hr>
-
-                    <button id="login">Log in</button>
-                    <p id="welcome"></p>
-                </div>
-            </div>
         </main>
         <script>
             let fn = sessionStorage.getItem("fn");
@@ -185,29 +156,8 @@
             alert(`Your password is ${passwordGenerated}`);
 
         };
-
-        //Welcome Back
-        let Email = document.getElementById("Email"); 
-        let Username = document.getElementById("Username");
-        let Password = document.getElementById("Password");
-
-        document.getElementById("login").onclick= function () {
-            if (Email.value === email && Username.value === user && Password.value === pass ) {
-                document.getElementById("welcome").textContent=`Welcome back ${fn}`;
-                document.getElementById("welcome").style.color= "green";}
-                else {
-                    document.getElementById("welcome").textContent= "Account doesn't exist"
-                    document.getElementById("welcome").style.color= "red";};
-            if (Email.value.trim() === "") {
-                document.getElementById("Emailerror").textContent= "Please enter your email"}
-            if (Username.value.trim() === "") {
-                document.getElementById("Usernameerror").textContent= "Please enter your username"}
-            if (Password.value.trim() === "") {
-                document.getElementById("Passworderror").textContent= "Please enter your password"}};
-            
-            
-        
-        //View Password
+              
+        // View/Hide Password
         const passwordfield = document.getElementById("pass");
         const ShowPassword = document.getElementById("viewiconshow");
         const HidePassword = document.getElementById("viewiconhide");
@@ -222,43 +172,6 @@
             passwordfield.type = "password";
             ShowPassword.style.display = "inline";
             HidePassword.style.display = "none";};
-
-            
-        const passwordfield2 = document.getElementById("Password");
-        const ShowPassword2 = document.getElementById("viewiconshow2");
-        const HidePassword2 = document.getElementById("viewiconhide2");
-        HidePassword2.style.display = "none";
-
-        ShowPassword2.onclick= function(){
-            passwordfield2.type = "text";
-            ShowPassword2.style.display = "none";
-            HidePassword2.style.display = "inline";};
-
-        HidePassword2.onclick= function(){
-            passwordfield2.type = "password";
-            ShowPassword2.style.display = "inline";
-            HidePassword2.style.display = "none";};
-        
-        //Sliding Box
-        let slid = false
-        const SwitchToCA = document.getElementById("SwitchToCreateAccount")
-        const SlideLogin = document.getElementById("slidelogin")
-
-        SwitchToCA.onclick = function(){
-            if (!slid) {
-                SlideLogin.style.left = '100%';
-                document.getElementById("slidetitle").textContent = "Welcome to Alyssa's Coffee Shop";
-                document.getElementById("slidep1").textContent = "Please create your account";
-                document.getElementById("slidetitle2").textContent = "Already a member?"
-                SwitchToCA.textContent = "Login";
-                slid = true}
-            else {
-                SlideLogin.style.left = '0%';
-                document.getElementById("slidetitle").textContent = "Welcome Back to Alyssa's Coffee Shop";
-                document.getElementById("slidep1").textContent = "Please enter your Login details";
-                document.getElementById("slidetitle2").textContent = "New here?"
-                SwitchToCA.textContent = "Sign Up"
-                slid = false}};
         </script>
     </body>
 </html>

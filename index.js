@@ -3,6 +3,8 @@ let cart = {};
 let totalItemCount = 0;  
 let totalpay = 0; 
 const itemCountField = document.getElementById("itemcount");
+const checkoutPriceField = document.getElementById("items-and-price-display");
+const paymentPriceField = document.getElementById("amount-due");
 
 console.log(cart);
 console.log(`Item count: ${totalItemCount}`);
@@ -27,10 +29,10 @@ class ItemCounting {
         this.itemPrice = itemPrice
     }
     updatingFields() {
-        console.log(`Item count: ${totalItemCount}`);
-        console.log(`Amount due: £${totalpay.toFixed(2)}`);
         itemCountField.textContent = `${totalItemCount} Items £${totalpay.toFixed(2)}`;
-        this.quantityField.textContent = ` ${this.itemQuantity} `};
+        this.quantityField.textContent = ` ${this.itemQuantity} `
+        checkoutPriceField.textContent = `${totalItemCount} Items £${totalpay.toFixed(2)}`;
+        paymentPriceField.textContent = `Amount due: £${totalpay.toFixed(2)}`};
     addItem(){
         this.itemQuantity ++;
         totalItemCount ++;
@@ -328,6 +330,10 @@ document.getElementById("pay-button").onclick= function () {
 document.getElementById("close-checkout-box").onclick= function() {
     document.getElementById("checkout-box").style.display = "none";
 }
+
+// Go to Checkout 
+
+
 
 // Checkout validation
 document.getElementById("paycheckout").onclick = function() {

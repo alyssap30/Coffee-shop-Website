@@ -18,13 +18,12 @@ body {
     padding: 20px;
     text-align: center;
     align-self: center;
-    width: 90%;
+    width: 100%;
     border-bottom: 3px solid rgb(161, 136, 127);
 }
 
 #footer {
     bottom: 0;
-    width: 90%;
 }
 
 #header {
@@ -48,11 +47,13 @@ body {
     background-color: rgb(188, 170, 164);
     color: rgb(78, 52, 46);
     border: none;
-    padding: 10px 15px;
+    width: 20%;
+    padding: 1% 0;
     margin: 5px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 120%;
     transition: background-color 0.3s ease;
 }
 
@@ -60,7 +61,6 @@ body {
     text-decoration: none;
     color: #4e342e;
     background-color: #bcaaa4;
-    padding: 10px 15px;
     margin: 5px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
@@ -78,7 +78,8 @@ body {
     display: block;
     margin: 0 auto;
     background-color: rgb(254, 249, 244);
-    width: 50%;
+    max-width: 800px;
+    width: 80%;
     border: 1px solid rgb(215, 204, 200);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -86,7 +87,8 @@ body {
 
 #newbox img {
     width: 80%;
-    height: auto;
+    height: 80%;
+    max-width: 500px;
     border-radius: 10px;
 }
 
@@ -95,9 +97,12 @@ body {
     display: block;
     margin: 0 auto;
     background-color: rgb(254, 249, 244);
-    width: 50%;
+    width: 80%;
+    max-width: 800px;
+    height: 40%;
     border: 1px solid rgb(215, 204, 200);
     border-radius: 10px;
+    font-size: 120%;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -105,7 +110,8 @@ body {
 #openinghourstable {
     border-collapse: collapse;
     display: inline-block;
-    font-size: 1em;
+    font-size: 120%;
+    margin: 1%;
 }
 
 #openinghourstable th,
@@ -128,39 +134,39 @@ body {
 /*Product Box*/
 #productgrid{
     display: flex;
+    margin: 0 3%;
     justify-content: center;
-    align-items: center;
     column-gap: 10px;
     position: relative;
+    height: 10%;
 }
 #productgrid img{
-    width: 75%;
-    height: 75%;
+    width: 90%;
+    height: 70%;
     display: block;
-    margin: 20px auto;
+    margin: 15% auto;
 }
 #productbox {
     background-color: white;
     box-shadow: 3px 3px 5px;
     border-radius: 8px;
     width: 20%;
-    height: 400px;
     margin-bottom: 4px;
 }
 #pricegrid {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 3%;
     column-gap: 10px;
     position: relative;
+    justify-content: center;
 }
 #pricebox {
     background-color: white;
     box-shadow: 3px 3px 5px;
+    padding: 0.5%;
     border-radius: 8px;
     width: 20%;
     min-height: 0;
-    height: auto !important;
     overflow: visible !important;
     box-sizing: border-box;
     word-break: break-word;
@@ -562,7 +568,7 @@ body {
     display: block;
     margin: auto;
     align-items: center;
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: center;
     column-gap: 10px;
@@ -582,11 +588,12 @@ body {
     width: 50%;
 }
 
-#vacanciesbox button {
+#vacanciesbox button, #applybox button {
     background-color: rgb(188, 170, 164);
     color: rgb(78, 52, 46);
     border: none;
-    padding: 10px 15px;
+    width: 40%;
+    padding: 2% 0;
     margin: 5px;
     border-radius: 8px;
     cursor: pointer;
@@ -599,30 +606,21 @@ body {
     background-color: rgb(254, 249, 244);
     border: 1px solid rgb(215, 204, 200);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    border-radius: 10px;
+    font-size: 130%;
+    width: 80%;
+    max-width: 700px;
+    max-height: 800px;
     display: none;
     flex-direction: column;
     position: fixed;
     top: 50%;
-    width: 35%;
     height: fit-content;
     left: 50%;
     transform: translate(-50%, -50%);
     white-space: normal;
     word-wrap: break-word;
     z-index: 1000;
-}
-
-#applybox button {
-    background-color: rgb(188, 170, 164);
-    color: rgb(78, 52, 46);
-    border: none;
-    padding: 10px 50px;
-    margin: 5px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
 #applybox input {
@@ -636,7 +634,7 @@ body {
     border: 1px solid #ccc;
 }
 #applybox input[type="file"] {
-    width: 40%;
+    width: 70%;
 }
 
 #applybox input::file-selector-button {
@@ -650,17 +648,24 @@ body {
     transition: background-color 0.3s ease;
 }
 
+#applybox button {
+    padding: 1% 0;
+    width: 30%;
+}
+
 #learnmorebox1, #learnmorebox2, #learnmorebox3, #learnmorebox4, #learnmorebox5, #learnmorebox6 {
     text-align: center;
     background-color: rgb(254, 249, 244);
     border: 1px solid rgb(215, 204, 200);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border-radius: 8px;
+    font-size: 130%;
     display: none;
     flex-direction: column;
     position: fixed;
     padding: 20px;
-    width: 30%;
+    width: 85%;
+    max-width: 750px;
     height: fit-content;
     top: 50%;  
     left: 50%;
@@ -668,20 +673,6 @@ body {
     white-space: normal;
     word-wrap: break-word;
     z-index: 1000;
-}
-
-#learnmorebox1 button, #learnmorebox2 button, #learnmorebox3 button, 
-#learnmorebox4 button, #learnmorebox5 button, #learnmorebox6 button {
-    background-color: rgb(188, 170, 164);
-    color: rgb(78, 52, 46);
-    border: none;
-    padding: 5px 50px;
-    margin: 5px;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
 #contactinfobox {

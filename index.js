@@ -1,4 +1,4 @@
-//Products
+//Products Page
 let cart = {};
 let totalItemCount = 0;  
 let totalpay = 0; 
@@ -10,6 +10,7 @@ console.log(cart);
 console.log(`Item count: ${totalItemCount}`);
 console.log(`Amount due: £${totalpay.toFixed(2)}`);
 
+// Dynamic cart update based on items selected
 function updateCartTable(cart){
     const cartTableBody = document.querySelector("#cart-table tbody");
     let rows = "";
@@ -21,6 +22,7 @@ function updateCartTable(cart){
         </tr>`;});
     cartTableBody.innerHTML = rows};
 
+// Uses functions to adjust elements based on user interaction
 class ItemCounting {
     constructor (itemName, quantityField, itemQuantity, itemPrice) {
         this.itemName = itemName
@@ -332,9 +334,6 @@ document.getElementById("close-checkout-box").onclick= function() {
 }
 
 // Go to Checkout 
-
-
-
 // Checkout validation
 document.getElementById("paycheckout").onclick = function() {
     const PaymentMethod = document.querySelector('input[name="card"]:checked');

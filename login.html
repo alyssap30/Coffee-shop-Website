@@ -55,7 +55,7 @@
                     <button id="generatepassword">Generate Password</button>
                     <button id="createaccountbutton">Create Account</button>
                 </div>
-            </div><br><br>
+            </div><br>
 
             <footer id="footer">
                 <p>
@@ -111,7 +111,7 @@
                     document.getElementById("passrequirements").textContent = "Password must be 8 characters long";
                     valid = false;}
                 if (valid) {
-                    window.location.href = "homestore.html";
+                    window.location.href = "index.html";
                     console.log(`The first name is ${fn}, The last name is ${ln}, The email is ${email}` )
                 }};
             
@@ -134,8 +134,8 @@
 
             console.log(allowedcharacters)
             
-            for(let i= 0; i < length; i++){
-                const randomIndex= Math.floor(Math.random() * allowedcharacters.length);
+            for(let i = 0; i < length; i++){
+                const randomIndex = Math.floor(Math.random() * allowedcharacters.length);
                 password += allowedcharacters[randomIndex]
             }
             return password;

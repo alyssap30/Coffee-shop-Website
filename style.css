@@ -18,6 +18,7 @@ body {
     padding: 20px;
     text-align: center;
     align-self: center;
+    z-index: 1000;
     width: 100%;
     border-bottom: 3px solid rgb(161, 136, 127);
 }
@@ -29,8 +30,6 @@ body {
 #header {
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 1000;
 }
 
 #header h1 {
@@ -150,7 +149,8 @@ body {
     background-color: white;
     box-shadow: 3px 3px 5px;
     border-radius: 8px;
-    width: 20%;
+    width: 24%;
+    max-width: 240px;
     margin-bottom: 4px;
 }
 #pricegrid {
@@ -165,8 +165,8 @@ body {
     box-shadow: 3px 3px 5px;
     padding: 0.5%;
     border-radius: 8px;
-    width: 20%;
-    min-height: 0;
+    width: 24%;
+    max-width: 240px;
     overflow: visible !important;
     box-sizing: border-box;
     word-break: break-word;
@@ -503,13 +503,12 @@ body {
 /* About Us Page */
 
 #vacanciesgrid {
-    display: block;
-    margin: auto;
-    align-items: center;
-    width: 90%;
     display: flex;
+    margin: 2% auto;
     justify-content: center;
-    column-gap: 10px;
+    align-items: center;
+    width: 100%;
+    column-gap: 1%;
     overflow: hidden;
 }
 
@@ -521,12 +520,12 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border-radius: 8px;
     display: block;
-    margin: 20px auto;
+    margin: 1% auto;
     position: relative;
     width: 50%;
 }
 
-#vacanciesbox button, #applybox button {
+#vacanciesbox button, #applybox button, #learnmorebox1 button, #learnmorebox2 button, #learnmorebox3 button, #learnmorebox4 button, #learnmorebox5 button, #learnmorebox6 button {
     background-color: rgb(188, 170, 164);
     color: rgb(78, 52, 46);
     border: none;
@@ -586,7 +585,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-#applybox button {
+#applybox button, #learnmorebox1 button, #learnmorebox2 button, #learnmorebox3 button, #learnmorebox4 button, #learnmorebox5 button, #learnmorebox6 button {
     padding: 1% 0;
     width: 30%;
 }
@@ -626,22 +625,69 @@ body {
     width: 80%;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 1000px) {
+    /* Navigation bar */
+    .navbar button {
+        width: 20%;
+        padding: 1% 0;
+        margin: 5px;
+        font-size: 30px;
+    }
+
+    /* Home Page */
+    #openbox {
+        width: 90%;
+    }
+
+    #newbox {
+        width: 90%;
+        max-width: 800px;
+        height: 40%;
+        border: 1px solid rgb(215, 204, 200);
+        border-radius: 10px;
+        font-size: 24px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    #openinghourstable {
+        font-size: 24px;
+    }
+
+    /* Vacancies Page */
+    #vacanciesgrid {
+        flex-direction: column;
+    }
+
+    #vacanciesbox {
+        align-self: center;
+        font-size: 30px;
+        width: 90%;
+    }
+
+    #vacanciesbox button, #applybox button {
+        border: none;
+        width: 40%;
+        padding: 1% 0;
+        border-radius: 8px;
+        font-size: 27px;
+        cursor: pointer;
+    }
+
+
     #checkoutbox,
     #paymentmethodbox,
     #applybox,
     #successful-payment-box,
     #learnmorebox1, #learnmorebox2, #learnmorebox3,
     #learnmorebox4, #learnmorebox5, #learnmorebox6 {
-        width: 95vw !important;
-        min-width: 0 !important;
+        width: 98%;
         left: 50%;
         top: 50%;
-        padding: 10px !important;
-        font-size: 1em;
+        position: fixed;
+        font-size: 30px;
     }
 
-    #itemcart {
+    /* #itemcart {
         font-size: 16px;
         margin-left: 0;
         width: 98vw;
@@ -676,20 +722,17 @@ body {
     }
 
     #applybox input {
-        width: 95vw !important;
-        font-size: 16px;
-    }
-    #applybox input[type="file"] {
-        width: 120vw !important;
-    }
-    #pricegrid {
+        width: 90vw !important;
+        max-width: 98vw !important;
+        font-size: 1em;
+    } */
+
+    /* #pricegrid, #productgrid {
         flex-direction: column !important;
         align-items: center !important;
     }
-    #pricebox {
-        width: 95vw !important;
-        min-width: 0 !important;
-        max-width: 98vw !important;
+    #pricebox, #productbox {
+        width: 90% !important;
         font-size: 1.2em !important;
         padding: 18px 8px !important;
         margin-bottom: 12px !important;
@@ -698,35 +741,10 @@ body {
         word-break: break-word;
         overflow-wrap: break-word;
         white-space: normal !important;
-    }
-    #accountgrid {
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100vw !important;
-        gap: 16px !important;
-    }
-    .box, .animatedboxlogin, #createaccountbox, #loginbox {
-        width: 95vw !important;
-        height: auto !important;
-        min-width: 0 !important;
-        max-width: 98vw !important;
-        box-sizing: border-box;
-        padding: 12px 8px !important;
-        margin: 0 auto 12px auto !important;
-    }
-    #slidelogin, #createaccounttitle {
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100vw !important;
-        padding: 0 !important;
-        display: block !important; 
-    }
+    } */
+   
 
-    #slidelogin {
-        display: none !important;
-    }
-
-    input[type="text"], input[type="email"], input[type="password"] {
+    /* input[type="text"], input[type="email"], input[type="password"] {
         width: 90vw !important;
         max-width: 98vw !important;
         font-size: 1em !important;
@@ -748,5 +766,5 @@ body {
         flex-direction: row !important;
         align-items: center !important;
         gap: 8px !important;
-    }
+    } */
 }

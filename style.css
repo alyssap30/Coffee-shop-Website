@@ -10,6 +10,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgb(245, 241, 230); 
     color: rgb(78, 52, 46); 
+    overflow-x: hidden;
+    min-height: 100%;
+    min-width: 100%;
 }
 
 /* Header */
@@ -60,7 +63,6 @@ body {
     text-decoration: none;
     color: #4e342e;
     background-color: #bcaaa4;
-    margin: 5px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
     font-weight: bold;
@@ -68,7 +70,6 @@ body {
 
 .navbar a:hover {
     background-color: rgb(161, 136, 127);
-    width: 100%;
     color: white;
 }
 
@@ -228,7 +229,6 @@ body {
 /* Login Page */
 
 #createaccountbox {
-    text-align: center;
     display: block;
     justify-self: center;
     width: 90%;
@@ -236,8 +236,7 @@ body {
     background-color: rgb(254, 249, 244, 0.6);
     border: 1px solid black;
     box-shadow: 3px 3px 5px gray;
-    border-radius: 8px;
-
+    border-radius: 8px
 }
 
 #noAccountBtn {
@@ -667,31 +666,64 @@ body {
         width: 93%;
     }
 
-    #vacanciesbox button, #applybox button {
-        border: none;
+    #vacanciesbox button {
         width: 40%;
         padding: 1% 0;
-        border-radius: 8px;
         font-size: 27px;
+    }
+
+    #noAccountBtn {
+        width: 90%;
+        border-radius: 8px;
         cursor: pointer;
+        display: block;
+        transition: background-color 0.3s ease;
+        font-size: 20px;
+        padding: 5px 20px;
+    }
+
+    #createaccountbox {
+        justify-self: center;
+        width: 95%;
+        max-width: 600px;
+        background-color: rgb(254, 249, 244, 0.6);
+        border: 1px solid black;
+        box-shadow: 3px 3px 5px gray;
+        border-radius: 8px
+    }
+
+    #applybox, #learnmorebox1, #learnmorebox2, #learnmorebox3, #learnmorebox4, #learnmorebox5, #learnmorebox6 {
+        width: 95%;
+        max-height: 85vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+        font-size: 30px;
+        height: auto;
+    }
+    
+    #applybox input {
+        font-size: 27px;
+    }
+    #applybox button, #learnmorebox1 button, #learnmorebox2 button, #learnmorebox3 button, #learnmorebox4 button, #learnmorebox5 button, #learnmorebox6 button{
+        font-size: 27px;
+        width: 40%;
     }
 
 
 
-
-
-    #checkoutbox,
+    /* #checkoutbox,
     #paymentmethodbox,
     #applybox,
     #successful-payment-box,
     #learnmorebox1, #learnmorebox2, #learnmorebox3,
     #learnmorebox4, #learnmorebox5, #learnmorebox6 {
-        width: 98%;
-        left: 50%;
-        top: 50%;
+        width: 100%;
+        margin: 0;
+        justify-content: center;
         position: fixed;
-        font-size: 30px;
-    }
+        font-size: 32px;
+    } */
+
 
     /* #itemcart {
         font-size: 16px;

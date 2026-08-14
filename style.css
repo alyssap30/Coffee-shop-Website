@@ -544,10 +544,10 @@ body {
     border: 1px solid rgb(215, 204, 200);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border-radius: 10px;
-    font-size: 130%;
-    width: 80%;
-    max-width: 700px;
-    max-height: 800px;
+    font-size: 28px;
+    width: 95%;
+    max-width: 800px;
+    max-height: 850px;
     display: none;
     flex-direction: column;
     position: fixed;
@@ -627,11 +627,14 @@ body {
 
 @media (max-width: 1000px) {
     /* Navigation bar */
+    .navbar {
+        justify-content: center;
+    }
     .navbar button {
-        width: 20%;
+        width: 23.5%;
         padding: 1% 0;
-        margin: 5px;
-        font-size: 30px;
+        margin: 2px;
+        font-size: 28px;
     }
 
     /* Home Page */
@@ -661,7 +664,7 @@ body {
     #vacanciesbox {
         align-self: center;
         font-size: 30px;
-        width: 90%;
+        width: 93%;
     }
 
     #vacanciesbox button, #applybox button {
@@ -672,6 +675,9 @@ body {
         font-size: 27px;
         cursor: pointer;
     }
+
+
+
 
 
     #checkoutbox,

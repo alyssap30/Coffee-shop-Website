@@ -11,16 +11,6 @@ console.log(`Item count: ${totalItemCount}`);
 console.log(`Amount due: £${totalpay.toFixed(2)}`);
 
 // Dynamic cart update based on items selected
-function updateCartTable(cart){
-    const cartTableBody = document.querySelector("#cart-table tbody");
-    let rows = "";
-    Object.entries(cart).forEach(([item, quantity]) => {
-    rows += `
-        <tr>
-        <td>${item}</td>
-        <td>${quantity}</td>
-        </tr>`;});
-    cartTableBody.innerHTML = rows};
 
 // Uses functions to adjust elements based on user interaction
 class ItemCounting {
@@ -34,15 +24,16 @@ class ItemCounting {
         itemCountField.textContent = `${totalItemCount} Items £${totalpay.toFixed(2)}`;
         this.quantityField.textContent = ` ${this.itemQuantity} `
         checkoutPriceField.textContent = `${totalItemCount} Items £${totalpay.toFixed(2)}`;
-        paymentPriceField.textContent = `Amount due: £${totalpay.toFixed(2)}`};
+        paymentPriceField.textContent = `Amount due: £${totalpay.toFixed(2)}`
+        this.updateCartTable()
+    };
     addItem(){
         this.itemQuantity ++;
         totalItemCount ++;
         this.quantityField.textContent = ` ${this.itemQuantity} `;
-        cart[this.itemName] = this.itemQuantity;
+        cart[this.itemName] = [this.itemQuantity, this.itemPrice] ;
         totalpay = totalpay + this.itemPrice;
         this.updatingFields()
-        updateCartTable()
     };
     deleteItem(){
         if (this.itemQuantity > 0){
@@ -51,9 +42,20 @@ class ItemCounting {
             totalpay = totalpay - this.itemPrice;
             if (this.itemQuantity === 0){delete cart [this.itemName]};
             this.updatingFields()
-            updateCartTable()
+            
         }
     }
+    updateCartTable(){
+        const cartTableBody = document.querySelector("#cart-table tbody");
+        let rows = "";
+        Object.entries(cart).forEach(([item, [quantity, price]]) => {
+        rows += `
+            <tr>
+            <td>${item}</td>
+            <td>${quantity}</td>
+            <td>£${(price * quantity).toFixed(2)}</td>
+            </tr>`;});
+        cartTableBody.innerHTML = rows};
 }
 
 // Object of items sold
@@ -61,13 +63,13 @@ const menuItems = {
     latte: new ItemCounting("Latte", document.getElementById("lattecount"), 2.39),
     americano: new ItemCounting("Americano", document.getElementById("americanocount"), 1.79),
     flatwhite: new ItemCounting("Flat White", document.getElementById("flatwhitecount"), 1.64),
-    cappucino: new ItemCounting("Cappuccino", document.getElementById("cappuccinocount"), 3.09),
+    cappuccino: new ItemCounting("Cappuccino", document.getElementById("cappuccinocount"), 3.09),
     cookies: new ItemCounting("Chocolate Chip Cookie", document.getElementById("cookiescount"), 0.78),
     brownies: new ItemCounting("Brownie", document.getElementById("browniescount"), 1.05),
     donut: new ItemCounting("Sprinkled Donut", document.getElementById("donutcount"), 0.75), 
     icecream: new ItemCounting("Dairy Milk Ice Cream", document.getElementById("icecreamcount"), 1.68),
     chocomilk: new ItemCounting("Milk Chocolate Milkshake", document.getElementById("chocomilkcount"), 1.99),
-    oreoMilkshake: new ItemCounting("Oreo Milkshake", document.getElementById("oreomilkcount"), 2.10),
+    oreomilk: new ItemCounting("Oreo Milkshake", document.getElementById("oreomilkcount"), 2.10),
     strawmilk: new ItemCounting("Strawberry Milkshake", document.getElementById("strawmilkcount"), 1.89),
     belgian: new ItemCounting("Belgian Chocolate Milkshake", document.getElementById("belgiancount"), 1.68),
     punch: new ItemCounting("Fruit Punch Smoothie", document.getElementById("punchcount"), 3.04),
@@ -94,6 +96,17 @@ document.getElementById("close-checkout-box").onclick= function() {
 }
 
 // Go to Checkout 
+document.getElementById("link-to-checkout").onclick= function() {
+    if (cart.length === 0) {
+        alert("Error: Cart is empty")
+    } else {
+         document.getElementById("paymentmethodbox").style.display = "block";
+    }
+}
+
+document.getElementById("ridofpayment").onclick= function() {
+    document.getElementById("paymentmethodbox").style.display = "none";
+}
 // Checkout validation
 document.getElementById("paycheckout").onclick = function() {
     const PaymentMethod = document.querySelector('input[name="card"]:checked');
@@ -119,27 +132,13 @@ document.getElementById("paycheckout").onclick = function() {
     else {
         document.getElementById("paymentmethodbox").style.display = "none";
         alert("Payment Successful!")
-        lattequantity = 0;
-        americanoquantity = 0;
-        flatwhitequantity = 0;
-        cappucinoquantity = 0;
-        cookiesquantity = 0;
-        browniesquantity = 0;
-        icecreamquantity = 0;
-        donutquantity = 0;
-        chocomilkquantity = 0;
-        strawmilkquantity = 0;
-        oreomilkquantity = 0;
-        belgianquantity = 0;
-        punchquantity = 0;
-        pinequantity = 0;
-        mangoquantity = 0;
-        dragquantity = 0;
         cart = {};
+
         totalItemCount = 0;  
         totalpay = 0;  
         sessionStorage.clear();
         document.getElementById("itemcart").style.display = "none";
+        document.getElementById("checkout-box").style.display = "none";
         document.getElementById("itemcount").textContent = "0 Items £0.00";
         document.getElementById("checkoutprice").textContent= "0 Items £0.00";
     }}

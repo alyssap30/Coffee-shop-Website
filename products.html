@@ -11,134 +11,199 @@
             <div class="navbar">
                 <a href="index.html"><button>Home</button></a>
                 <a href="products.html"><button>Products</button></a>
-                <a href="about-us.html"></a><button>About Us</button></a>
-                <a href="login.html"><button>Login</button></a>
+                <a href="about-us.html"><button>About Us</button></a>
+                <a href="login.html"><button>Log in</button></a>
             </div>
         </header><br><br><br><br><br><br>
 
         <main><br>
-
+            <!-- Coffee grid -->
             <h2 style="text-align: center;">Coffees</h2>
             <div class="container" id="productgrid">
-                <div class="box" id="productbox"><img src="images/latte.jpeg"></div>
-                <div class="box" id="productbox"><img src="images/americano.jpeg"></div>
-                <div class="box" id="productbox"><img src="images/flatwhite.jpeg"></div>
-                <div class="box" id="productbox"><img src="images/cappuccino.jpeg"></div>
-            </div>
-            <div class="container" id="pricegrid">
-                <div class="box" id="pricebox">
-                    Latte £2.39<br>
-                    <button id="lesslatte">-</button><label id="lattecount"> 0 </label><button id="morelatte">+</button>
+                <!-- Line 1-->
+                <div id = "line1">
+                    <div id = "product">
+                        <!-- Latte-->
+                        <div class="box" id="productbox"><img src="images/latte.jpeg"></div>
+                        <div class="box" id="pricebox">
+                            Latte £2.39<br>
+                            <button id="lesslatte">-</button>
+                            <label id="lattecount"> 0 </label>
+                            <button id="morelatte">+</button>
+                    </div></div>
+                    <!-- Americano -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/americano.jpeg"></div>
+                        <div class="box" id="pricebox">
+                            Americano £1.79<br>
+                            <button id="lessamericano">-</button>
+                            <label id="americanocount"> 0 </label>
+                            <button id="moreamericano">+</button>
+                    </div></div>
                 </div>
-
-                <div class="box" id="pricebox">
-                    Americano £1.79<br>
-                    <button id="lessamericano">-</button><label id="americanocount"> 0 </label><button id="moreamericano">+</button>
+                <!-- Line 2-->
+                <div id = "line2">
+                    <!-- Flat White -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/flatwhite.jpeg"></div>
+                        <div class="box" id="pricebox">
+                        Flat White £1.64<br>
+                        <button id="lessflatwhite">-</button>
+                        <label id="flatwhitecount"> 0 </label>
+                        <button id="moreflatwhite">+</button>
+                    </div></div>
+                    <!-- Cappucino -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/cappuccino.jpeg"></div>
+                        <div class="box" id="pricebox">
+                        Cappucino £3.09<br>
+                        <button id="lesscappuccino">-</button>
+                        <label id="cappuccinocount"> 0 </label>
+                        <button id="morecappuccino">+</button>
+                    </div></div>
                 </div>
+            </div><br><br>
 
-                <div class="box" id="pricebox">
-                    Flat White £1.64<br>
-                    <button id="lessflatwhite">-</button><label id="flatwhitecount"> 0 </label><button id="moreflatwhite">+</button>
-                </div>
-
-                <div class="box" id="pricebox">
-                    Cappucino £3.09<br>
-                    <button id="lesscappuccino">-</button><label id="cappuccinocount"> 0 </label><button id="morecappuccino">+</button>
-                </div>
-            </div><br>
-
-
+            <!-- Treats grid -->
             <h2 style="text-align: center;">Treats</h2>
-            <div class="container" id="productgrid">
-                <div class="box" id="productbox"><img src="images/cookie.jpeg"></div>
-                <div class="box" id="productbox"><img src="images/brownie.jpeg"></div>
-                <div class="box" id="productbox"><img src="images/donut.jpeg"></div>
-                <div class="box" id="productbox"><img src="images/icecream.jpeg"></div>
-
-            </div>
-            <div class="container" id="pricegrid">
-                <div class="box" id="pricebox">
-                    Chocolate Chip Cookie £0.78<br>
-                    <button id="lesscookies">-</button><label id="cookiescount"> 0 </label><button id="morecookies">+</button>
+            <div id = "productgrid">
+                <!-- Line 1-->
+                <div id = "line1">
+                    <!-- Cookie -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/cookie.jpeg"></div>
+                        <div class="box" id="pricebox">
+                        Chocolate Chip Cookie £0.78<br>
+                        <button id="lesscookies">-</button>
+                        <label id="cookiescount"> 0 </label>
+                        <button id="morecookies">+</button>
+                    </div></div>
+                    <!-- Brownie -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/brownie.jpeg"></div>
+                        <div class="box" id="pricebox">
+                        Brownie £1.05<br>
+                        <button id="lessbrownies">-</button>
+                        <label id="browniescount"> 0 </label>
+                        <button id="morebrownies">+</button>
+                    </div></div>
                 </div>
-
-                <div class="box" id="pricebox">
-                    Brownie £1.05<br>
-                    <button id="lessbrownies">-</button><label id="browniescount"> 0 </label><button id="morebrownies">+</button>
+                <!-- Line 2-->
+                <div id = "line2">
+                    <!-- Donut -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/donut.jpeg"></div>
+                        <div class="box" id="pricebox">
+                        Sprinkle Donut £0.75<br>
+                        <button id="lessdonut">-</button>
+                        <label id="donutcount"> 0 </label>
+                        <button id="moredonut">+</button>
+                    </div></div>
+                    <!-- Ice Cream -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/icecream.jpeg"></div>
+                        <div class="box" id="pricebox">
+                        Dairy Milk Ice Cream £1.68<br>
+                        <button id="lessicecream">-</button>
+                        <label id="icecreamcount"> 0 </label>
+                        <button id="moreicecream">+</button>
+                    </div></div>
                 </div>
+            </div><br><br>
 
-                <div class="box" id="pricebox">
-                    Sprinkle Donut £0.75<br>
-                    <button id="lessdonut">-</button><label id="donutcount"> 0 </label><button id="moredonut">+</button>
-                </div>
-
-                <div class="box" id="pricebox">
-                    Dairy Milk Ice Cream £1.68<br>
-                    <button id="lessicecream">-</button><label id="icecreamcount"> 0 </label><button id="moreicecream">+</button>
-                </div>
-            </div><br>
-
-
+            <!-- Milkshake grid -->
             <h2 style="text-align: center;">Milkshakes</h2>
-            <div class="container" id="productgrid">
-                <div class="box" id="productbox"><img src="images/chocomilk.jpeg" id="image"></div>
-                <div class="box" id="productbox"><img src="images/oreomilk.jpg" id="image"></div>
-                <div class="box" id="productbox"><img src="images/strawberrymilk.jpeg" id="image"></div>
-                <div class="box" id="productbox"><img src="images/begianmilkshake.jpg" id="image"></div>
-            </div>
+            <div id = "productgrid">
+                <!-- Line 1-->
+                <div id = "line1">
+                    <!-- Chocolate Milkshake -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/chocomilk.jpeg" id="image"></div>
+                        <div class="box" id="pricebox">
+                        Chocolate Milkshake £1.99<br>
+                        <button id="lesschocomilk">-</button>
+                        <label id="chocomilkcount"> 0 </label>
+                        <button id="morechocomilk">+</button>
+                    </div></div>
+                    <!-- Oreo Milkshake -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/oreomilk.jpg" id="image"></div>
+                        <div class="box" id="pricebox">
+                        Oreo Milkshake £2.10<br>
+                        <button id="lessoreomilk">-</button>
+                        <label id="oreomilkcount"> 0 </label>
+                        <button id="moreoreomilk">+</button>
+                    </div></div>
+                </div>
+                <!-- Line 2-->
+                <div id = "line2">
+                    <!-- Strawberry Milkshake -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/strawberrymilk.jpeg" id="image"></div>
+                        <div class="box" id="pricebox">
+                        Strawberry Milkshake £1.89<br>
+                        <button id="lessstrawmilk">-</button>
+                        <label id="strawmilkcount"> 0 </label>
+                        <button id="morestrawmilk">+</button>
+                    </div></div>
+                    <!-- Belgian Milkshake -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/begianmilkshake.jpg" id="image"></div>
+                        <div class="box" id="pricebox">
+                        Belgian Milkshake £1.68<br>
+                        <button id="lessbelgian">-</button>
+                        <label id="belgiancount"> 0 </label>
+                        <button id="morebelgian">+</button>
+                    </div></div>
+                </div>
+            </div><br><br>
 
-            <div class="container" id="pricegrid">
-                <div class="box" id="pricebox">
-                    Milk Chocolate Milkshake £1.99<br>
-                    <button id="lesschocomilk">-</button><label id="chocomilkcount"> 0 </label><button id="morechocomilk">+</button>
-                </div>
-                <div class="box" id="pricebox">
-                    Oreo Milkshake £2.10<br>
-                    <button id="lessoreomilk">-</button><label id="oreomilkcount"> 0 </label><button id="moreoreomilk">+</button>
-                </div>
-                <div class="box" id="pricebox">
-                    Strawberry Milkshake £1.89<br>
-                    <button id="lessstrawmilk">-</button><label id="strawmilkcount"> 0 </label><button id="morestrawmilk">+</button>
-                </div>
-                <div class="box" id="pricebox">
-                    Belgian Chocolate Milkshake £1.68<br>
-                    <button id="lessbelgian">-</button><label id="belgiancount"> 0 </label><button id="morebelgian">+</button>
-                </div>
-            </div><br>
-
-
+            <!-- Milkshake grid -->
             <h2 style="text-align: center;">Smoothies</h2>
             <div class="container" id="productgrid">
-                <div class="box" id="productbox"><img src="images/fruitpunchsmoothie.jpeg"></div>
-                <div class="box" id="productbox"><img src="images/pineapplesmoothie.jpeg"></div>
-                <div class="box" id="productbox"><img src="images/appleandmangosmoothie.png"></div>
-                <div class="box" id="productbox"><img src="images/dragonfruitsmoothie.jpg"></div>
-            </div>
-            <div class="container" id="pricegrid">
-        <div class="box"; id="pricebox">
-            Fruit Punch Smoothie £3.04<br>
-            <button id="lesspunch">-</button><label id="punchcount"> 0 </label><button id="morepunch">+</button>
-           </div>
+                <!-- Line 1-->
+                <div id = "line1">
+                    <!-- Fruit Punch Smoothie -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/fruitpunchsmoothie.jpeg"></div>
+                        <div class="box"; id="pricebox">
+                        Fruit Punch Smoothie £3.04<br>
+                        <button id="lesspunch">-</button>
+                        <label id="punchcount"> 0 </label>
+                        <button id="morepunch">+</button>
+                    </div></div>
+                    <!-- Pineapple Smoothie -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/pineapplesmoothie.jpeg"></div>
+                        <div class="box"; id="pricebox">
+                        Pineapple Smoothie £2.98<br>
+                        <button id="lesspine">-</button>
+                        <label id="pinecount"> 0 </label>
+                        <button id="morepine">+</button>
+                    </div></div>
+                </div>
+                <!-- Line 2-->
+                <div id = "line2">
+                    <!-- Apple and Mango Smoothie -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/appleandmangosmoothie.png"></div>
+                        <div class="box"; id="pricebox">
+                        Mango Smoothie £2.68<br>
+                        <button id="lessmango">-</button><label id="mangocount"> 0 </label><button id="moremango">+</button>
+                    </div></div>
+                    <!-- Dragon Fruit Smoothie -->
+                    <div id = "product">
+                        <div class="box" id="productbox"><img src="images/dragonfruitsmoothie.jpg"></div>
+                        <div class="box"; id="pricebox">
+                        Dragon Fruit Smoothie £2.38<br>
+                        <button id="lessdrag">-</button>
+                        <label id="dragcount"> 0 </label>
+                        <button id="moredrag">+</button>
+                    </div></div>
+                </div>
+            </div><br><br>
 
-
-           <div class="box"; id="pricebox">
-            Pineapple Smoothie £2.98<br>
-            <button id="lesspine">-</button><label id="pinecount"> 0 </label><button id="morepine">+</button>
-           </div>
-
-
-           <div class="box"; id="pricebox">
-            Apple and Mango Smoothie £2.68<br>
-            <button id="lessmango">-</button><label id="mangocount"> 0 </label><button id="moremango">+</button>
-           </div>
-
-
-           <div class="box"; id="pricebox">
-            Dragon Fruit and Raspberry £2.38<br>
-            <button id="lessdrag">-</button><label id="dragcount"> 0 </label><button id="moredrag">+</button>
-           </div>
-        </div><br><br> 
-
+            <!-- Pay Box with the table summary -->
             <div class="box" id="paybox">
                 <p id= "itemcount"; style="font-size: 25px;">0 Items £0.00</p>
                 <button id="pay-button">View Cart and Pay</button>
@@ -152,6 +217,7 @@
                         <tr>
                             <th>Item</th>
                             <th>Quantity</th>
+                            <th>Price</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -171,10 +237,10 @@
                     Visa</label><br>
 
                     <label id="pmlabel" for="paypal"><input type="radio" id="paypal" name="card">
-                    Paypal</label><br>
+                    Paypal</label><br><hr>
 
                 <label style="text-align: center;">Card Number</label>
-                <input id="card" placeholder="----/----/----"><br>
+                <input id="card" placeholder="----/----/----"><br><hr>
 
                 <div id ="formatpay">
                     <div id="leftpay">

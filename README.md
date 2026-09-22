@@ -14,6 +14,13 @@
 
 ## Design Justification 
 
+## To add
+
+- Access Controls (Admin view)
+- DB for accounts 
+- DB for payments 
+- DB for applications 
+
 ## Link 
 
 https://alyssap30.github.io/Coffee-shop-Website/

@@ -10,6 +10,10 @@
 - Mathematical Calculations
 - Mobile Compatibility 
 
+## Tools Used
+
+## Design Justification 
+
 ## Link 
 
 https://alyssap30.github.io/Coffee-shop-Website/

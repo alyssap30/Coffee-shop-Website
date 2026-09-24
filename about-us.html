@@ -9,10 +9,10 @@
         <header id="header">
             <h1>Coffee Shop</h1>
             <div class="navbar">
-                <a href="index.html"><button>Home</button></a>
-                <a href="products.html"><button>Products</button></a>
-                <a href="about-us.html"><button>About Us</button></a>
-                <a href="login.html"><button>Login</button></a>
+                <button id = "home-btn">Home</button>
+                <button id = "products-btn">Products</button>
+                <button id = "about-us-btn">About Us</button>
+                <button id = "login-btn">Login</button>
             </div>
         </header><br><br><br><br><br><br><br>
         <main>
@@ -101,8 +101,8 @@
                 <ul>
                     <li>1 year experience in a barista role (Prefered)</li>
                 </ul><hr>
-                <button id="closemore1">Close</button>
-                <button id="applyfrommore1">Apply Now</button>
+                <button id="close-more1">Close</button>
+                <button id="apply-from-more1">Apply Now</button>
             </div>
 
             <div class="box" id="learnmorebox2">
@@ -124,8 +124,8 @@
                 <ul>
                     <li>1 year experience in a waiter role (Prefered)</li>
                 </ul><hr>
-                <button id="closemore2">Close</button>
-                <button id="applyfrommore2">Apply Now</button>
+                <button id="close-more2">Close</button>
+                <button id="apply-from-more2">Apply Now</button>
             </div>
 
         <div class="box" id="learnmorebox3">
@@ -145,8 +145,8 @@
                 <ul><hr>
                     <li>1 year experience in a cleaning role (Prefered)</li>
                 </ul><hr>
-                <button id="closemore3">Close</button>
-                <button id="applyfrommore3">Apply Now</button>
+                <button id="close-more3">Close</button>
+                <button id="apply-from-more3">Apply Now</button>
             </div>
             
             <div class="box" id="learnmorebox4">
@@ -171,8 +171,8 @@
                     <li>Knife Licence</li>
                     <li>Bachelor Degree in Hospitality and Catering or a similar subject</li>
                 </ul><hr>
-                <button id="closemore4">Close</button>
-                <button id="applyfrommore4">Apply Now</button>
+                <button id="close-more4">Close</button>
+                <button id="apply-from-more4">Apply Now</button>
             </div>
 
             <div class="box" id="learnmorebox5">
@@ -196,8 +196,8 @@
                     <li>Knife Licence</li>
                     <li>Bachelor Degree in Hospitality and Catering or a similar subject</li>
                 </ul><hr>
-                <button id="closemore5">Close</button>
-                <button id="applyfrommore5">Apply Now</button>
+                <button id="close-more5">Close</button>
+                <button id="apply-from-more5">Apply Now</button>
             </div>
 
             <div class="box" id="learnmorebox6">
@@ -219,8 +219,8 @@
                     <li>1 year experience in a supplier role (Prefered)</li>
                     <li>Driving Licence (Required)</li>
                 </ul><hr>
-                <button id="closemore6">Close</button>
-                <button id="applyfrommore6">Apply Now</button>
+                <button id="close-more6">Close</button>
+                <button id="apply-from-more6">Apply Now</button>
             </div>
 
             <h2>Contact Information</h2>
@@ -243,118 +243,6 @@
                 © 2026 Coffee Shop. All Rights Reserved
             </p>
         </footer>
-        <script>
-            const JobName = document.getElementById("jobname");
-            const ApplyBox = document.getElementById("applybox");
-
-            document.getElementById("apply-for-job1").onclick = function() {
-                ApplyBox.style.display = "block";
-                JobName.textContent= "Barista";    
-            };
-            document.getElementById("apply-for-job2").onclick = function() {
-                ApplyBox.style.display = "block";
-                JobName.textContent= "Waiting Staff";    
-            };
-            document.getElementById("apply-for-job3").onclick = function() {
-                ApplyBox.style.display = "block";
-                JobName.textContent= "Cleaner";    
-            };
-            document.getElementById("apply-for-job4").onclick = function() {
-                ApplyBox.style.display = "block";
-                JobName.textContent= "Head Chef";    
-            };
-            document.getElementById("apply-for-job5").onclick = function() {
-                ApplyBox.style.display = "block";
-                JobName.textContent= "Chef";    
-            }
-            document.getElementById("apply-for-job6").onclick = function() {
-                ApplyBox.style.display = "block";
-                JobName.textContent= "Food Supplier";    
-            };
-            document.getElementById("canceljob").onclick = function() {
-                ApplyBox.style.display = "none"
-            }
-
-
-            document.getElementById("learnmore1").onclick = function() {
-                document.getElementById("learnmorebox1").style.display= "block"
-            }
-            document.getElementById("closemore1").onclick = function() {
-                document.getElementById("learnmorebox1").style.display= "none" 
-            }
-            document.getElementById("applyfrommore1").onclick= function() {
-                document.getElementById("learnmorebox1").style.display = "none";
-                ApplyBox.style.display = "block"
-            }
-
-            document.getElementById("learnmore2").onclick = function() {
-                document.getElementById("learnmorebox2").style.display= "block"
-            }
-            document.getElementById("closemore2").onclick = function() {
-                document.getElementById("learnmorebox2").style.display= "none" 
-            }
-            document.getElementById("applyfrommore2").onclick= function() {
-                document.getElementById("learnmorebox2").style.display = "none";
-                ApplyBox.style.display = "block";
-            }
-
-            document.getElementById("learnmore3").onclick = function() {
-                document.getElementById("learnmorebox3").style.display= "block"
-            }
-            document.getElementById("closemore3").onclick = function() {
-                document.getElementById("learnmorebox3").style.display= "none" 
-            }
-            document.getElementById("applyfrommore3").onclick= function() {
-                document.getElementById("learnmorebox3").style.display = "none";
-                ApplyBox.style.display = "block";
-            }
-
-            document.getElementById("learnmore4").onclick = function() {
-                document.getElementById("learnmorebox4").style.display= "block"
-            }
-            document.getElementById("closemore4").onclick = function() {
-                document.getElementById("learnmorebox4").style.display= "none" 
-            }
-            document.getElementById("applyfrommore4").onclick= function() {
-                document.getElementById("learnmorebox4").style.display = "none";
-                ApplyBox.style.display = "block";
-            }
-
-            document.getElementById("learnmore5").onclick = function() {
-                document.getElementById("learnmorebox5").style.display= "block"
-            }
-            document.getElementById("closemore5").onclick = function() {
-                document.getElementById("learnmorebox5").style.display= "none" 
-            }
-            document.getElementById("applyfrommore5").onclick= function() {
-                document.getElementById("learnmorebox5").style.display = "none";
-                ApplyBox.style.display = "block";
-            }
-
-            document.getElementById("learnmore6").onclick = function() {
-                document.getElementById("learnmorebox6").style.display= "block"
-            }
-            document.getElementById("closemore6").onclick = function() {
-                document.getElementById("learnmorebox6").style.display= "none" 
-            }
-            document.getElementById("applyfrommore6").onclick= function() {
-                document.getElementById("learnmorebox6").style.display = "none";
-                ApplyBox.style.display = "block";
-            }
-
-            document.getElementById("ApplyJob").onclick = function() {
-                const FullName = document.getElementById("full-name");
-                const Email = document.getElementById("email");
-                const PhoneNumber = document.getElementById("phone-num");
-                const StartDate = document.getElementById("start-date");
-                if (!FullName.value.trim() === "" && !Email.value.trim() === "" && 
-                    !PhoneNumber.value.trim() === "" && !StartDate.value.trim() === "") {
-                        alert("Please fill out all fields")}
-                else {
-                    alert("Application sent to hiring team")
-                    ApplyBox.style.display = "none"
-                }
-            }
-        </script>
+        <script src = "index.js"></script>
     </body>
 </html>

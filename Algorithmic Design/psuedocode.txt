@@ -1,0 +1,220 @@
+// Navigation Bar
+
+DECLARE path as pathName OR index.html
+DECLARE activePage
+
+IF path == 'products.html' THEN 
+    SET activePage TO 'products'
+ELSE IF path == 'about-us.html' THEN
+    SET activePage TO 'about us'
+ELSE IF path == 'login.html' THEN
+    SET activePage TO 'login'
+ELSE
+    SET activePage TO 'home'
+END IF
+
+homeBtn onClick => pageSwitching("index.html");
+productsBtn onClick => pageSwitching("products.html");
+aboutUsBtn onClick => pageSwitching("about-us.html");
+loginBtn onClick  => pageSwitching("login.html");
+noAccountBtn onClick => pageSwitching("index.html");
+
+IF activePage == 'products' THEN
+    DECLARE cart AS DICTIONARY
+    DECLARE totalItemCount AS 0;  
+    DECLARE totalpay AS 0; 
+
+    CLASS itemCounting
+        CONSTRUCTOR(itemName, quantityField, itemPrice)
+            SET itemName TO itemName
+            SET quantityField TO quantityField
+            SET itemQuantity TO 0
+            SET itemPrice TO itemPrice
+        END CONSTRUCTOR
+
+        FUNCTION updatingFields
+            SET itemCountField text TO FORMATTED STRING WITH totalItemCount, totalPay ROUNDED TO 2DP
+            SET quantityField text TO FORMATTED STRING WITH itemQuantity
+            checkoutPriceField.text TO FORMATTED STRING WITH totalItemCount, totalPay ROUNDED TO 2DP
+            paymentPriceField.text TO FORMATTED STRING WITH totalPay ROUNDED TO 2DP
+            CALL updateCartTable
+        END FUNCTION
+
+        FUNCTION addItem
+            INCREMENT itemQuantity BY 1
+            INCREMENT totalItemCount BY 1
+            SET totalpay TO totalpay + itemPrice
+            SET cart[itemName] TO [itemQuantity, itemPrice]
+            CALL updatingFields
+        END FUNCTION
+
+        FUNCTION deleteItem
+            IF itemQuantity > 0 THEN
+                DECREMENT totalItemCount BY 1
+                DECREMENT itemQuantity BY 1
+                SET totalpay TO totalpay - itemPrice
+                IF itemQuantity == 0 THEN
+                    REMOVE cart[itemName]
+                ELSE
+                    SET cart[itemName] TO [itemQuantity, itemPrice]
+                END IF
+                CALL updatingFields
+            END IF
+        END FUNCTION
+
+        FUNCTION updateCartTable
+            DECLARE rows AS EMPTY STRING
+            FOR EACH (item, quantity, price) IN cart
+                APPEND row (item, quantity, price * quantity) TO rows
+            END FOR
+            SET cartTableBody innerHTML TO rows
+        END FUNCTION
+    END CLASS
+
+    DECLARE menuItems AS DICTIONARY OF itemCounting OBJECTS
+    // e.g DECLARE menuItems['latte'] = NEW itemCounting("Latte", latteCount field, 2.39)
+    
+    FOR EACH key IN menuItems
+        moreButton FOR key, onClick => CALL menuItems[key].addItem
+        lessButton FOR key, onClick => CALL menuItems[key].deleteItem
+    END FOR
+
+    payButton onClick => SHOW checkout-box
+    closeCheckoutBox onClick => HIDE checkout-box
+
+    linkToCheckout onClick =>
+        IF cart IS EMPTY THEN
+            DISPLAY "Error: Cart is empty"
+        ELSE
+            SHOW paymentmethodbox
+        END IF
+
+    ridOfPayment onClick => HIDE paymentmethodbox
+
+    payCheckout onClick =>
+        IF paymentMethod NOT SELECTED OR cardNumber IS EMPTY OR expiryDate IS EMPTY OR cvNumber IS EMPTY THEN
+            DISPLAY "Please fill out all fields"
+            EXIT FUNCTION
+        END IF
+
+        IF LENGTH OF cardNumber != 16 THEN
+            DISPLAY "Card number must be 16 digits"
+            EXIT FUNCTION
+        END IF
+
+        IF LENGTH OF cvNumber != 3 THEN
+            DISPLAY "CV number must be 3 digits"
+            EXIT FUNCTION
+        END IF
+
+        HIDE paymentmethodbox
+        DISPLAY "Payment Successful!"
+        SET cart TO EMPTY DICTIONARY
+        SET totalItemCount AND totalPay TO 0
+        FOR EACH item IN menuItems
+            DELETE OBJECTS
+        END FOR
+
+        HIDE checkout-box
+        SET itemCount text AND itemsAndPriceDisplay text TO '0 Items £0.00'
+
+ELSE IF activePage == 'login' THEN
+
+    FUNCTION presenceCheck(fieldVar, fieldName, errorId) RETURNS BOOLEAN
+        IF fieldVar value TRIMMED == '' THEN
+            SET errorId textContent TO 'Please enter your ' + fieldName
+            RETURN false
+        ELSE
+            SET errorId textContent TO ''
+            RETURN true
+        END IF
+    END FUNCTION
+
+    FUNCTION lengthCheck(fieldVar, fieldName, errorId, minLength, maxLength) RETURNS BOOLEAN
+        IF varLength < minLength THEN
+            SET errorId textContent TO fieldName + " must be at least " + minLength + " characters long"
+            RETURN false
+        ELSE IF varLength > maxLength THEN
+            SET errorId textContent TO fieldName + " must be less than " + maxLength + " characters long"
+            RETURN false
+        ELSE
+            RETURN true
+        END IF
+    END FUNCTION
+
+    createAccountButton onClick =>
+        DECLARE valid AS true       
+        SET valid TO presenceCheck(fnInput, "First Name", fnError) AND valid
+        SET valid TO presenceCheck(lnInput, "Last Name", lnError) AND valid
+        SET valid TO presenceCheck(emailInput, "Email", emailError) AND valid
+        SET valid TO presenceCheck(passInput, "Password", passError) AND valid
+        SET valid TO lengthCheck(passInput, "Password", passError, 8) AND valid
+
+        IF valid THEN
+            DISPLAY fnInput, lnInput, emailInput values IN CONSOLE
+            CALL pageSwitching("index.html")
+        END IF
+
+    FUNCTION generatePassword(length, includeLowercase, includeNumbers, includeUppercase, includeSymbols) RETURNS STRING
+        DECLARE allowedCharacters AS EMPTY STRING
+        APPEND lowercase letters TO allowedCharacters
+        APPEND symbols TO allowedCharacters
+        APPEND uppercase letters TO allowedCharacters
+        APPEND digits TO allowedCharacters
+
+        DECLARE password AS EMPTY STRING
+        FOR i FROM 1 TO length
+            APPEND RANDOM CHARACTER FROM allowedCharacters TO password
+        END FOR
+        RETURN password
+    END FUNCTION
+
+    generatePasswordButton onClick =>
+        DECLARE generated AS CALL generatePassword(12, true, true, true, true)
+        SET passInput value TO generated
+        STORE generated IN sessionStorage
+        DISPLAY "Your password is " + generated
+
+    showPasswordIcon onClick =>
+        SET passInput type TO "*"
+        HIDE showIcon, SHOW hideIcon
+
+    hidePasswordIcon onClick =>
+        SET passInput type TO "password"
+        SHOW showIcon, HIDE hideIcon
+
+ELSE IF activePage == 'about us' THEN
+    DECLARE jobName, applyBox AS element references
+
+    CLASS jobApplying
+        CONSTRUCTOR(jobTitle)
+            SET jobTitle TO jobTitle
+        END CONSTRUCTOR
+
+        FUNCTION applyingForJob
+            SHOW applyBox
+            SET jobName textContent TO jobTitle
+        END FUNCTION
+    END CLASS
+
+    DECLARE jobsObj AS DICTIONARY OF jobApplying OBJECTS, KEYED 1 TO 6
+
+    FOR EACH key IN jobsObj
+        applyFromLearnMoreButton FOR key, onClick =>
+            CALL jobsObj[key].applyingForJob
+            HIDE learnMoreBox FOR key
+        applyButton FOR key, onClick => CALL jobsObj[key].applyingForJob
+        openMoreButton FOR key, onClick => SHOW learnMoreBox FOR key
+        closeMoreButton FOR key, onClick => HIDE learnMoreBox FOR key
+    END FOR
+
+    cancelJobButton onClick => HIDE applyBox
+
+    applyJobButton onClick =>
+        IF fullName IS EMPTY OR email IS EMPTY OR phoneNumber IS EMPTY OR startDate IS EMPTY THEN
+            DISPLAY "Please fill out all fields"
+        ELSE
+            DISPLAY "Application sent to hiring team"
+            HIDE applyBox
+        END IF
+END IF

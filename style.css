@@ -19,6 +19,7 @@ body {
 #header, #footer {
     background-color: #d7ccc8;
     padding: 20px;
+    font-size: 25px;
     text-align: center;
     align-self: center;
     z-index: 1000;
@@ -139,7 +140,7 @@ body {
     align-items: stretch;
     column-gap: 10px;
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     position: relative;
 }
 
@@ -158,7 +159,7 @@ body {
     box-shadow: 3px 3px 5px;
     border-radius: 8px;
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     margin-bottom: 5px;
 }
 
@@ -176,8 +177,10 @@ body {
     box-shadow: 3px 3px 5px;
     border-radius: 8px;
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
+    padding: 2%;
     margin-bottom: 8%;
+    font-size: 20px;
     overflow: visible !important;
     box-sizing: border-box;
     word-break: break-word;
@@ -190,6 +193,7 @@ body {
     color: rgb(78, 52, 46);
     border: none;
     border-radius: 5px;
+    font-size: 20px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
@@ -200,8 +204,9 @@ body {
 }
 
 #paybox {
-    width: 86%;
+    width: 90%;
     height: 140px;
+    font-size: 25px;
     text-align: center;
     display: block;
     margin: 0 auto;
@@ -212,7 +217,8 @@ body {
 }
 
 #pay-button {
-    padding: 5px 80px;
+    width: 60%;
+    padding: 0.5%;
     font-size: 25px;
     border-radius: 8px;
     background-color: rgb(188, 170, 164);
@@ -237,7 +243,6 @@ body {
     padding: 10px;
     border: 1px solid rgb(221, 221, 221);
     border-collapse: collapse;
-    
 }
 
 /* Login Page */
@@ -518,7 +523,7 @@ body {
     margin: 2% auto;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
     column-gap: 1%;
     overflow: hidden;
 }
@@ -530,6 +535,7 @@ body {
     border: 1px solid rgb(215, 204, 200);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border-radius: 8px;
+    font-size: 25px;
     display: block;
     margin: 1% auto;
     position: relative;
@@ -541,6 +547,7 @@ body {
     color: rgb(78, 52, 46);
     border: none;
     width: 40%;
+    font-size: 23px;
     padding: 2% 0;
     margin: 5px;
     border-radius: 8px;
@@ -631,6 +638,7 @@ body {
     padding: 10px;
     border-radius: 8px;
     display: block;
+    font-size: 25px;
     margin: 0px auto;
     position: relative;
     width: 80%;
@@ -733,15 +741,15 @@ body {
 
     #productgrid {
        flex-direction: column;
-        align-items: center;
-        row-gap: 4%; 
-        width: 100%;
+       align-items: center;
+       row-gap: 3%; 
+       width: 100%;
     }
     #line1, #line2 {
         display: flex;
         align-items: stretch;
         justify-content: center;
-        max-width: 700px;
+        max-width: 800px;
         column-gap: 1%;
         width: 100%;
         margin: 0 auto;
@@ -749,7 +757,8 @@ body {
     }
 
     #productbox, #pricebox{
-        max-width: 400px;
+        max-width: 600px;
+        font-size: 30px;
     }
     #product {
         width: 100%;
@@ -758,8 +767,38 @@ body {
         max-width: none;
         box-sizing: border-box;
     }
-
     #pricebox button {
         font-size: 30px;
     }
+    #itemcount {
+        font-size: 30px;
+    }
+
+#pay-button {
+    font-size: 33px;
+    border-radius: 8px;
+    background-color: rgb(188, 170, 164);
+    color: rgb(78, 52, 46);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+ }
+#cart-table {
+    display: inline-block;
+    margin: 20px auto;
+}
+#cart-table th, #cart-table td {
+    text-align: center;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+}
+#cart-table td {
+    padding: 10px;
+    border: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+}
+#contactinfobox {
+    font-size: 30px;
+}
 }
